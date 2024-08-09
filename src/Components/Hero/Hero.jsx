@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import img from "../../../public/img1.jpg";
 import { HiArrowSmDown } from "react-icons/hi";
 import { Link } from "react-scroll";
+import { FaGithub } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 function Hero() {
   return (
     <div className=" h-screen">
       <aside id="icons" className="fixed top-1/2 left-0 flex flex-col shadow-md shadow-black p-2 ">
-        <a target="_blank" href="https://github.com/Chandan-Kr-dev"><img src="../../../public/github-mark-white.png" alt="" className="h-12 w-12 m-1" /></a>
-        <a target="_blank" href="https://www.linkedin.com/in/chandan-kumar-30aa0328a?utm_source=share&utm_campaign=share_via&utm_content=profile"><img src="../../../public/LI-In-Bug.png" alt="" className="h-12 w-12 m-1" /></a>
-        <a target="_blank" href="https://www.instagram.com/invites/contact/?igsh=5i2pyt1ttbw3&utm_content=lqq6upt"><img src="../../../public/insta.png" alt="" className="h-12 w-12 " /></a>
+        <a target="_blank" href="https://github.com/Chandan-Kr-dev" className="invert text-4xl m-2"><FaGithub /></a>
+        <a target="_blank" className="invert text-4xl m-2" href="https://www.linkedin.com/in/chandan-kumar-30aa0328a?utm_source=share&utm_campaign=share_via&utm_content=profile"><FaLinkedin /></a>
+        <a target="_blank" className="invert text-4xl m-2" href="https://www.instagram.com/invites/contact/?igsh=5i2pyt1ttbw3&utm_content=lqq6upt"><FaInstagram /></a>
         
       </aside>
       <div className="w-4/5 mx-auto mt-60 flex justify-center items-center gap-28">

@@ -2,15 +2,18 @@ import React, { useEffect, useState } from "react";
 
 function Projects() {
   const [Details, setDetails] = useState([]);
+
+  const [showbuttons, setshowbuttons] = useState(false);
+
   const ProjectDetails = [
     {
-      img: "../../../public/python1.png",
+      img: "../python1.png",
       title: "Calculator",
       linkTo: "https://github.com/Chandan-Kr-dev/calculator",
       visit: "",
     },
     {
-      img: "../../../public/Todoimg.jpg",
+      img: "",
       title: "Todo App Using React",
       linkTo: "https://github.com/Chandan-Kr-dev/TodoReact",
       visit: "https://main--todo-app-ck.netlify.app/",
@@ -29,28 +32,24 @@ function Projects() {
         <div id="card" className="flex justify-evenly items-center flex-wrap">
           {ProjectDetails.map((det) => {
             return (
-              <div className=" ">
-                <div className="about bg-slate-100 rounded-lg p-2 hover:">
-                  <img className="h-36 w-36 rounded-lg hover:opacity-50 items-center" src={det.img} alt="" />
-                  <div className=" ">
-                    <p>{det.title}</p>
+              <div
+                onMouseEnter={() => setshowbuttons(true)}
+                className="w-[12vw] h-[12vh] bg-violet-400 p-2 rounded-lg"
+              >
+                
+                <div className="title w-full my-4 font-bold ">
+                  <h1>{det.title}</h1>
+                </div>
+                {showbuttons ? (
+                  <div className="buttons flex">
+                    <button className="hidden bg-blue-500 hover:bg-blue-900 hover:text-white font-semibold transition-all mx-2 px-2 rounded-lg ">
+                      Code
+                    </button>
+                    <button className="hidden bg-blue-500 hover:bg-blue-900 hover:text-white font-semibold transition-all mx-2 px-2 rounded-lg ">
+                      Preview
+                    </button>
                   </div>
-                </div>
-                <div className="buttons flex gap-5">
-                  <a
-                    className="bg-green-500 text-white  px-2 py-1 rounded-lg my-5"
-                    target="_blank"
-                    href={det.linkTo}
-                  >
-                    Code
-                  </a>
-                  <a
-                    href={det.visit}
-                    className="bg-green-500 text-white  px-2 py-1 rounded-lg my-5"
-                  >
-                    View
-                  </a>
-                </div>
+                ) : null}
               </div>
             );
           })}
