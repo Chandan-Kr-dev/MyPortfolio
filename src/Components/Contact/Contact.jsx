@@ -9,14 +9,14 @@ function Contact() {
       <div className="">
         <div className="text-white flex justify-center items-center gap-5 md:text-2xl font-semibold my-5  ">
           <input
-            className="rounded text-black md:p-1 px-1 w-1/3"
+            className="rounded text-black md:p-1 px-1 md:w-1/3 w-80"
             type="text"
             placeholder="Name"
           />
         </div>
         <div className="text-white flex justify-center items-center gap-5 md:text-2xl font-semibold my-5  ">
           <input
-            className="rounded text-black md:p-1 px-1 w-1/3"
+            className="rounded text-black md:p-1 px-1 md:w-1/3 w-80"
             type="text"
             placeholder="Email"
           />
@@ -24,7 +24,7 @@ function Contact() {
         <div className=" md:text-2xl font-semibold my-5  ">
           <textarea
             name="Message"
-            className="rounded md:p-1 px-1 text-black w-1/3"
+            className="rounded md:p-1 px-1 text-black md:w-1/3 w-80"
             cols={40}
             rows={6}
             placeholder="Enter Your Message here.."
