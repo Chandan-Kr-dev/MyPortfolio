@@ -8,8 +8,8 @@ function Projects() {
   const ProjectDetails = [
     {
       img: "../python1.png",
-      title: "Calculator",
-      linkTo: "https://github.com/Chandan-Kr-dev/calculator",
+      title: "Login Form",
+      linkTo: "https://github.com/Chandan-Kr-dev/LoginForm",
       visit: "",
     },
     {
@@ -43,12 +43,12 @@ function Projects() {
                 </div>
                 {showbuttons ? (
                   <div className="buttons flex">
-                    <button className=" bg-blue-500 hover:bg-blue-900 hover:text-white font-semibold transition-all mx-2 px-2 rounded-lg ">
+                    <a href={det.linkTo} className=" bg-blue-500 hover:bg-blue-900 hover:text-white font-semibold transition-all mx-2 px-2 rounded-lg ">
                       Code
-                    </button>
-                    <button className=" bg-blue-500 hover:bg-blue-900 hover:text-white font-semibold transition-all mx-2 px-2 rounded-lg ">
+                    </a>
+                    <a href={det.visit} className=" bg-blue-500 hover:bg-blue-900 hover:text-white font-semibold transition-all mx-2 px-2 rounded-lg ">
                       Preview
-                    </button>
+                    </a>
                   </div>
                 ) : null}
               </div>
