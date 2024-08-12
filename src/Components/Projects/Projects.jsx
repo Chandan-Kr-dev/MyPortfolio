@@ -34,6 +34,7 @@ function Projects() {
             return (
               <div
                 onMouseEnter={() => setshowbuttons(true)}
+                onMouseLeave={()=>setshowbuttons(false)}
                 className="w-[12vw] h-[12vh] bg-violet-400 p-2 rounded-lg"
               >
                 
@@ -42,10 +43,10 @@ function Projects() {
                 </div>
                 {showbuttons ? (
                   <div className="buttons flex">
-                    <button className="hidden bg-blue-500 hover:bg-blue-900 hover:text-white font-semibold transition-all mx-2 px-2 rounded-lg ">
+                    <button className=" bg-blue-500 hover:bg-blue-900 hover:text-white font-semibold transition-all mx-2 px-2 rounded-lg ">
                       Code
                     </button>
-                    <button className="hidden bg-blue-500 hover:bg-blue-900 hover:text-white font-semibold transition-all mx-2 px-2 rounded-lg ">
+                    <button className=" bg-blue-500 hover:bg-blue-900 hover:text-white font-semibold transition-all mx-2 px-2 rounded-lg ">
                       Preview
                     </button>
                   </div>
