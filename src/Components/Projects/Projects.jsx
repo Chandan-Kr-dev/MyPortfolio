@@ -25,17 +25,17 @@ function Projects() {
   }, []);
 
   return (
-    <div className="m-32 rounded-lg text-center">
-      <h1 className="text-white font-bold text-5xl ">Projects</h1>
+    <div className="md:m-32  mx-6  my-8  rounded-lg text-center">
+      <h1 className="text-white font-bold md:text-5xl text-2xl">Projects</h1>
       <div className="text-center bg-blue-400 mt-10 rounded-lg p-10">
-        <h1 className="text-white text-2xl mb-8">Web Devlopment Projects</h1>
-        <div id="card" className="flex justify-evenly items-center flex-wrap">
+        <h1 className="text-white md:text-2xl mb-8">Web Devlopment Projects</h1>
+        <div id="card" className="flex justify-evenly items-center flex-wrap mx-2 ">
           {ProjectDetails.map((det) => {
             return (
               <div
                 onMouseEnter={() => setshowbuttons(true)}
                 onMouseLeave={()=>setshowbuttons(false)}
-                className="w-[12vw] h-[12vh] bg-violet-400 p-2 rounded-lg"
+                className="md:w-[12vw] md:h-[12vh] bg-violet-400 p-2 rounded-lg my-2 mx-2"
               >
                 
                 <div className="title w-full my-4 font-bold ">
@@ -50,7 +50,14 @@ function Projects() {
                       Preview
                     </a>
                   </div>
-                ) : null}
+                ) : <div className=" md:hidden buttons flex">
+                <a href={det.linkTo} className=" bg-blue-500 hover:bg-blue-900 hover:text-white font-semibold transition-all mx-2 px-2 rounded-lg ">
+                  Code
+                </a>
+                <a href={det.visit} className=" bg-blue-500 hover:bg-blue-900 hover:text-white font-semibold transition-all mx-2 px-2 rounded-lg ">
+                  Preview
+                </a>
+              </div>}
               </div>
             );
           })}
