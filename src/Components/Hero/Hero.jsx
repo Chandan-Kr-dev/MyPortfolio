@@ -8,7 +8,7 @@ import { FaLinkedin } from "react-icons/fa";
 
 function Hero() {
   return (
-    <div className=" h-screen">
+    <div className=" h-96">
       <aside
         id="icons"
         className="fixed top-1/2 left-0 flex flex-col shadow-md shadow-black p-2 bg-violet-950 md:bg-transparent "

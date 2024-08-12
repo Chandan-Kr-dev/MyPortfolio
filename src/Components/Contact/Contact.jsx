@@ -21,10 +21,10 @@ function Contact() {
             placeholder="Email"
           />
         </div>
-        <div className="text-white flex justify-center items-center gap-5 md:text-2xl font-semibold my-5  ">
+        <div className=" md:text-2xl font-semibold my-5  ">
           <textarea
             name="Message"
-            className="rounded md:p-1 px-1 text-black"
+            className="rounded md:p-1 px-1 text-black w-1/3"
             cols={40}
             rows={6}
             placeholder="Enter Your Message here.."
