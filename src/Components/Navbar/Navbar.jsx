@@ -1,11 +1,20 @@
-import React from "react";
-import { useRef } from "react";
+import React, { useState } from "react";
 import { Link } from "react-scroll";
-import { FaBars, FaBraille, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 
 function Navbar() {
- 
+  const [showmenu, setshowmenu] = useState(false)
+  
+  const togglemenu=()=>{
+    setshowmenu(!showmenu)
+  }
+
+  const closeMenuOnMobile = () => {
+    if (window.innerWidth <= 1150) {
+      setShowMenu(false);
+    }
+  };
 
   return (
     <header>
