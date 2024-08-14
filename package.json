@@ -36,6 +36,9 @@
   "@fontsource/roboto": "^5.0.14",
   
     
+  "@gsap/react": "^2.1.1",
+  
+    
   "@mui/material": "^5.16.6",
   
     

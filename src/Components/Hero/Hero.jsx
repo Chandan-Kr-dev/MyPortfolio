@@ -5,8 +5,50 @@ import { Link } from "react-scroll";
 import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(useGSAP);
 
 function Hero() {
+
+  useGSAP(()=>{
+    gsap.from(".avatar",{
+      y:50,
+      opacity:0,
+      duration:1,
+
+    })
+  },[])
+  useGSAP(()=>{
+    gsap.from(".myself",{
+      y:50,
+      opacity:0,
+      duration:1,
+      stagger:1
+
+    })
+  })
+  useGSAP(()=>{
+    gsap.from(".myself .hi",{
+      y:100,
+      opacity:0,
+      duration:1,
+      stagger:1
+
+    })
+  })
+  useGSAP(()=>{
+    gsap.from(".myself .from",{
+      x:200,
+      opacity:0,
+      duration:1,
+      stagger:1
+
+    })
+  })
+
+
   return (
     <div className=" h-96">
       <aside
@@ -35,19 +77,19 @@ function Hero() {
           <FaInstagram />
         </a>
       </aside>
-      <div className="w-4/5 mx-auto mt-60 grid grid-cols-1  md:flex justify-center items-center md:gap-28">
+      <div className=" w-4/5 mx-auto mt-60 grid grid-cols-1  md:flex justify-center items-center md:gap-28">
         <img
           src="img1.jpg"
           alt="CK"
-          className="md:h-80 md:w-80 h-40 w-40 m-auto  bg-cover object-cover rounded-full"
+          className="avatar md:h-80 md:w-80 h-40 w-40 m-auto  bg-cover object-cover rounded-full"
         />
         <div className="m-auto">
-          <div className="text-slate-300 ">
-            <p className="text-xl font-semibold font-mono">Hi,</p>
+          <div className="myself text-slate-300 ">
+            <p className="hi text-xl font-semibold font-mono">Hi,</p>
             <h1 className="md:text-5xl text-2xl font-bold my-2 font-mono">
               Myself <span className="text-yellow-300">Chandan Kumar</span>
             </h1>
-            <p className="md:text-xl font-semibold font-mono">
+            <p className=" from md:text-xl font-semibold font-mono">
               From Dumka,Jharkhand
             </p>
           </div>
@@ -55,7 +97,7 @@ function Hero() {
             to="About"
             smooth={true}
             duration={500}
-            className="m-auto bg-purple-600 p-3 text-white font-semibold hover:bg-purple-800 rounded relative top-10 left-8 cursor-pointer"
+            className="mx-auto bg-purple-600 p-3 text-white font-semibold hover:bg-purple-800 rounded relative top-10 left-8 cursor-pointer"
           >
             About
           </Link>

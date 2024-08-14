@@ -1,9 +1,13 @@
 import React from 'react'
-import python from '../../../public/python.png'
+
+
+
 
 function Skills() {
+
+ 
   return (
-    <div className='bg-blue-900 md:m-32  mx-6  my-8  rounded-lg p-10 text-center'>
+    <div className='skill-section bg-blue-900 md:m-32  mx-6  my-8  rounded-lg p-10 text-center'>
         <h1 className='  text-white font-bold  md:text-5xl text-xl mb-10'>Skills</h1>
         <div className='grid md:grid-cols-3 grid-cols-2 md:gap-20 gap-10 gap-y-10 '>
           <div className='text-white md:text-xl px-3 py-1 rounded shadow-md shadow-black basis-1/6'>HTML</div>

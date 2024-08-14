@@ -1,26 +1,27 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { FaBars, FaTimes } from "react-icons/fa";
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(useGSAP);
+
 
 
 function Navbar() {
-  const [showmenu, setshowmenu] = useState(false)
+
+  useGSAP(()=>{
+    gsap.from(".navbar",{
+      y:-20,
+      opacity:0
+    })
+  })
   
-  const togglemenu=()=>{
-    setshowmenu(!showmenu)
-  }
-
-  const closeMenuOnMobile = () => {
-    if (window.innerWidth <= 1150) {
-      setShowMenu(false);
-    }
-  };
-
   return (
     <header>
       <nav
         
-        className="bg-blue-950 px-5 py-3 fixed w-full top-0 left-0 "
+        className="navbar bg-blue-950 px-5 py-3  "
       >
         <div className="flex justify-between items-center ">
           <h1 className=" md:text-2xl text-sm font-bold font-sans text-yellow-300">
