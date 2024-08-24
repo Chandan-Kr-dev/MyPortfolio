@@ -1,48 +1,51 @@
 import React, { useState } from "react";
-import img from "../../../public/img1.jpg";
+
 import { HiArrowSmDown } from "react-icons/hi";
 import { Link } from "react-scroll";
 import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-import "./Hero.js"
+import gsap from "gsap"
+
+gsap.registerPlugin(useGSAP);
+
 function Hero() {
 
-  // useGSAP(()=>{
-  //   gsap.from(".avatar",{
-  //     y:50,
-  //     opacity:0,
-  //     duration:1,
+  useGSAP(()=>{
+    gsap.from(".avatar",{
+      y:50,
+      opacity:0,
+      duration:1,
 
-  //   })
-  // },[])
-  // useGSAP(()=>{
-  //   gsap.from(".myself",{
-  //     y:50,
-  //     opacity:0,
-  //     duration:1,
-  //     stagger:1
+    })
+  },[])
+  useGSAP(()=>{
+    gsap.from(".myself",{
+      y:50,
+      opacity:0,
+      duration:1,
+      stagger:1
 
-  //   })
-  // })
-  // useGSAP(()=>{
-  //   gsap.from(".myself .hi",{
-  //     y:100,
-  //     opacity:0,
-  //     duration:1,
-  //     stagger:1
+    })
+  })
+  useGSAP(()=>{
+    gsap.from(".myself .hi",{
+      y:100,
+      opacity:0,
+      duration:1,
+      stagger:1
 
-  //   })
-  // })
-  // useGSAP(()=>{
-  //   gsap.from(".myself .from",{
-  //     x:200,
-  //     opacity:0,
-  //     duration:1,
-  //     stagger:1
+    })
+  })
+  useGSAP(()=>{
+    gsap.from(".myself .from",{
+      x:200,
+      opacity:0,
+      duration:1,
+      stagger:1
 
-  //   })
-  // })
+    })
+  })
 
 
   return (

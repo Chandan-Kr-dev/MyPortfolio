@@ -1,7 +1,7 @@
 import React from 'react'
 import gsap from 'gsap';
 
-import "./About.js"
+
 function About() {
 
   // useGSAP(()=>{
