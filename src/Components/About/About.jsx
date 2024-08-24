@@ -1,42 +1,40 @@
 import React from 'react'
 import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
 
-gsap.registerPlugin(useGSAP);
-
+import "./About.js"
 function About() {
 
-  useGSAP(()=>{
-    gsap.from(".about-section",{
-      x:300,
-      duration:1,
-      scrollTrigger:{
-        trigger:".about-section",
-        scroller:"body",
-        start:"top 50%",
-        scrub:1
-      }
+  // useGSAP(()=>{
+  //   gsap.from(".about-section",{
+  //     x:300,
+  //     duration:1,
+  //     scrollTrigger:{
+  //       trigger:".about-section",
+  //       scroller:"body",
+  //       start:"top 50%",
+  //       scrub:1
+  //     }
 
-    })
-  })
-  useGSAP(()=>{
-    gsap.from(".fullstack",{
-      y:100,
-      duration:1,
-      opacity:0
+  //   })
+  // })
+  // useGSAP(()=>{
+  //   gsap.from(".fullstack",{
+  //     y:100,
+  //     duration:1,
+  //     opacity:0
       
 
-    })
-  })
-  useGSAP(()=>{
-    gsap.from(".about",{
-      y:100,
-      duration:1,
-      opacity:0
+  //   })
+  // })
+  // useGSAP(()=>{
+  //   gsap.from(".about",{
+  //     y:100,
+  //     duration:1,
+  //     opacity:0
       
 
-    })
-  })
+  //   })
+  // })
 
   return (
     <div className='md:m-32 mx-8  '>

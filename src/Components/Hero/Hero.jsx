@@ -5,48 +5,44 @@ import { Link } from "react-scroll";
 import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-
-gsap.registerPlugin(useGSAP);
-
+import "./Hero.js"
 function Hero() {
 
-  useGSAP(()=>{
-    gsap.from(".avatar",{
-      y:50,
-      opacity:0,
-      duration:1,
+  // useGSAP(()=>{
+  //   gsap.from(".avatar",{
+  //     y:50,
+  //     opacity:0,
+  //     duration:1,
 
-    })
-  },[])
-  useGSAP(()=>{
-    gsap.from(".myself",{
-      y:50,
-      opacity:0,
-      duration:1,
-      stagger:1
+  //   })
+  // },[])
+  // useGSAP(()=>{
+  //   gsap.from(".myself",{
+  //     y:50,
+  //     opacity:0,
+  //     duration:1,
+  //     stagger:1
 
-    })
-  })
-  useGSAP(()=>{
-    gsap.from(".myself .hi",{
-      y:100,
-      opacity:0,
-      duration:1,
-      stagger:1
+  //   })
+  // })
+  // useGSAP(()=>{
+  //   gsap.from(".myself .hi",{
+  //     y:100,
+  //     opacity:0,
+  //     duration:1,
+  //     stagger:1
 
-    })
-  })
-  useGSAP(()=>{
-    gsap.from(".myself .from",{
-      x:200,
-      opacity:0,
-      duration:1,
-      stagger:1
+  //   })
+  // })
+  // useGSAP(()=>{
+  //   gsap.from(".myself .from",{
+  //     x:200,
+  //     opacity:0,
+  //     duration:1,
+  //     stagger:1
 
-    })
-  })
+  //   })
+  // })
 
 
   return (
@@ -97,7 +93,7 @@ function Hero() {
             to="About"
             smooth={true}
             duration={500}
-            className="mx-auto bg-purple-600 p-3 text-white font-semibold hover:bg-purple-800 rounded relative top-10 left-8 cursor-pointer"
+            className="about-btn mx-auto bg-purple-600 p-3 text-white font-semibold hover:bg-purple-800 rounded relative top-10 left-8 cursor-pointer"
           >
             About
           </Link>

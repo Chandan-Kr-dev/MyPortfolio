@@ -1,22 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { FaBars, FaTimes } from "react-icons/fa";
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-
-gsap.registerPlugin(useGSAP);
 
 
 
 function Navbar() {
 
-  useGSAP(()=>{
-    gsap.from(".navbar",{
-      y:-20,
-      opacity:0
-    })
-  })
-  
+ 
   return (
     <header>
       <nav

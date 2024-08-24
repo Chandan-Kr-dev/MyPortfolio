@@ -18,6 +18,12 @@ function Projects() {
       linkTo: "https://github.com/Chandan-Kr-dev/TodoReact",
       visit: "https://main--todo-app-ck.netlify.app/",
     },
+    {
+      img: "",
+      title: "Animated Website WizardZ",
+      linkTo: "https://github.com/Chandan-Kr-dev/WizardZanimatedWeb",
+      visit: "",
+    },
   ];
   const gameProjects = [];
   useEffect(() => {
