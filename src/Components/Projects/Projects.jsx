@@ -22,7 +22,7 @@ function Projects() {
       img: "",
       title: "Animated Website WizardZ",
       linkTo: "https://github.com/Chandan-Kr-dev/WizardZanimatedWeb",
-      visit: "",
+      visit: "https://wizard-zanimated-web.vercel.app/",
     },
   ];
   const gameProjects = [];
