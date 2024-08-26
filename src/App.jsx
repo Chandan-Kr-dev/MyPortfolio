@@ -5,12 +5,13 @@ import About from './Components/About/About'
 import Skills from './Components/Skills/Skills'
 import Projects from './Components/Projects/Projects'
 import Contact from './Components/Contact/Contact'
+import { useScroll ,motion } from 'framer-motion'
 
 function App() {
-  
+  const {scrollXProgress}=useScroll()
 
   return (
-   <main className=' '>
+   <main  >
       <Navbar/>
       <div id="Home">
       <Hero/>

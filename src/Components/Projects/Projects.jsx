@@ -1,28 +1,48 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import Card from "../Card";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 function Projects() {
   const [Details, setDetails] = useState([]);
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 1", "1.33 1"],
+  });
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
+  
 
-  const [showbuttons, setshowbuttons] = useState(false);
+  
 
   const ProjectDetails = [
     {
-      img: "../python1.png",
+      idx:0,
+      img: "../Todoimg.jpg",
       title: "Login Form",
       linkTo: "https://github.com/Chandan-Kr-dev/LoginForm",
       visit: "",
     },
     {
-      img: "",
+      idx:1,
+      img: "../Todoimg.jpg",
       title: "Todo App Using React",
       linkTo: "https://github.com/Chandan-Kr-dev/TodoReact",
       visit: "https://main--todo-app-ck.netlify.app/",
     },
     {
+      idx:2,
       img: "",
       title: "Animated Website WizardZ",
       linkTo: "https://github.com/Chandan-Kr-dev/WizardZanimatedWeb",
       visit: "https://wizard-zanimated-web.vercel.app/",
+    },
+    {
+      idx:3,
+      img: "",
+      title: "Twitter Clone UI",
+      linkTo: "https://github.com/Chandan-Kr-dev/TwiiterCloneUI",
+      visit: "",
     },
   ];
   const gameProjects = [];
@@ -31,39 +51,19 @@ function Projects() {
   }, []);
 
   return (
-    <div className="md:m-32  mx-6  my-8  rounded-lg text-center">
+    <motion.div ref={ref} 
+    style={{
+      opacity:opacityProgress,
+      scale:scaleProgress  
+    }} className="md:m-32  mx-6  my-8  rounded-lg text-center">
       <h1 className="text-white font-bold md:text-5xl text-2xl">Projects</h1>
       <div className="text-center bg-blue-400 mt-10 rounded-lg p-10">
         <h1 className="text-white md:text-2xl mb-8">Web Devlopment Projects</h1>
-        <div id="card" className="flex justify-evenly items-center flex-wrap mx-2 ">
+        <div id="card" className="flex flex-wrap mx-20 ">
           {ProjectDetails.map((det) => {
             return (
-              <div
-                onMouseEnter={() => setshowbuttons(true)}
-                onMouseLeave={()=>setshowbuttons(false)}
-                className="md:w-[12vw] md:h-[12vh] bg-violet-400 p-2 rounded-lg my-2 mx-2"
-              >
-                
-                <div className="title w-full my-4 font-bold ">
-                  <h1>{det.title}</h1>
-                </div>
-                {showbuttons ? (
-                  <div className="buttons flex">
-                    <a href={det.linkTo} className=" bg-blue-500 hover:bg-blue-900 hover:text-white font-semibold transition-all mx-2 px-2 rounded-lg ">
-                      Code
-                    </a>
-                    <a href={det.visit} className=" bg-blue-500 hover:bg-blue-900 hover:text-white font-semibold transition-all mx-2 px-2 rounded-lg ">
-                      Preview
-                    </a>
-                  </div>
-                ) : <div className=" md:hidden buttons flex">
-                <a href={det.linkTo} className=" bg-blue-500 hover:bg-blue-900 hover:text-white font-semibold transition-all mx-2 px-2 rounded-lg ">
-                  Code
-                </a>
-                <a href={det.visit} className=" bg-blue-500 hover:bg-blue-900 hover:text-white font-semibold transition-all mx-2 px-2 rounded-lg ">
-                  Preview
-                </a>
-              </div>}
+              <div key={det.idx} className="m-5 ">
+                <Card img={det.img} title={det.title} code={det.linkTo} visit={det.visit} />
               </div>
             );
           })}
@@ -98,7 +98,7 @@ function Projects() {
           </div>
         ) : null}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

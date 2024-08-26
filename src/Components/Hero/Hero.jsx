@@ -1,51 +1,16 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
-import { HiArrowSmDown } from "react-icons/hi";
+
 import { Link } from "react-scroll";
 import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-import gsap from "gsap"
 
-gsap.registerPlugin(useGSAP);
 
 function Hero() {
 
-  useGSAP(()=>{
-    gsap.from(".avatar",{
-      y:50,
-      opacity:0,
-      duration:1,
-
-    })
-  },[])
-  useGSAP(()=>{
-    gsap.from(".myself",{
-      y:50,
-      opacity:0,
-      duration:1,
-      stagger:1
-
-    })
-  })
-  useGSAP(()=>{
-    gsap.from(".myself .hi",{
-      y:100,
-      opacity:0,
-      duration:1,
-      stagger:1
-
-    })
-  })
-  useGSAP(()=>{
-    gsap.from(".myself .from",{
-      x:200,
-      opacity:0,
-      duration:1,
-      stagger:1
-
-    })
-  })
+ 
 
 
   return (
@@ -77,22 +42,26 @@ function Hero() {
         </a>
       </aside>
       <div className=" w-4/5 mx-auto mt-60 grid grid-cols-1  md:flex justify-center items-center md:gap-28">
-        <img
+        <motion.img
+          initial={{opacity:0 ,y:-100}}
+          animate={{y:0 ,opacity:1}}
+          transition={{duration:0.5}}
           src="img1.jpg"
           alt="CK"
           className="avatar md:h-80 md:w-80 h-40 w-40 m-auto  bg-cover object-cover rounded-full"
         />
         <div className="m-auto">
           <div className="myself text-slate-300 ">
-            <p className="hi text-xl font-semibold font-mono">Hi,</p>
-            <h1 className="md:text-5xl text-2xl font-bold my-2 font-mono">
-              Myself <span className="text-yellow-300">Chandan Kumar</span>
-            </h1>
-            <p className=" from md:text-xl font-semibold font-mono">
-              From Dumka,Jharkhand
-            </p>
+            <motion.p initial={{x:-100 ,opacity:0}} animate={{x:0 , opacity:1}} transition={{duration:0.2}} className="hi text-xl font-semibold font-mono">Hi,</motion.p>
+            <motion.h1 initial={{opacity:0 ,x:200}} animate={{x:0 ,opacity:1}} className="md:text-6xl text-2xl font-extrabold my-2 font-mono">
+              Hey , I'm  <span className="text-yellow-300">Chandan</span><span className="text-green-500">.</span>
+            </motion.h1>
+            <motion.p initial={{x:200 ,opacity:0}} animate={{opacity:1,x:0}} transition={{delay:0.3,duration:0.2}} className=" from md:text-2xl font-bold font-sans ">
+              FullStack web Developer <br /> Game Developer
+            </motion.p>
           </div>
           <Link
+          
             to="About"
             smooth={true}
             duration={500}

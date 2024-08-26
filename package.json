@@ -42,6 +42,9 @@
   "@mui/material": "^5.16.6",
   
     
+  "framer-motion": "^11.3.30",
+  
+    
   "react": "^18.3.1",
   
     
