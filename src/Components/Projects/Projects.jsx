@@ -59,7 +59,7 @@ function Projects() {
       <h1 className="text-white font-bold md:text-5xl text-2xl">Projects</h1>
       <div className="text-center bg-blue-400 mt-10 rounded-lg p-10">
         <h1 className="text-white md:text-2xl mb-8">Web Devlopment Projects</h1>
-        <div id="card" className="flex flex-wrap mx-20 ">
+        <div id="card" className="flex flex-wrap md:mx-20 -mx-5 ">
           {ProjectDetails.map((det) => {
             return (
               <div key={det.idx} className="m-5 ">

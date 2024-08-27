@@ -40,7 +40,7 @@ function Contact() {
           </div>
           <div className=" md:text-2xl font-semibold   ">
 
-          <textarea value={Message} onChange={(event) => setMessage(event.target.value)} />
+          <textarea value={Message} onChange={(event) => setMessage(event.target.value)} rows={5} cols={38} className="rounded text-black md:p-1 px-1 md:w-1/3 w-80" placeholder="Your Message" />
           </div>
           <motion.button
             whileHover={{ scale: 1.2 }}
