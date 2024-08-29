@@ -5,8 +5,9 @@ const Card = (props) => {
   const [showbuttons, setshowbuttons] = useState(false);
   return (
     <motion.div
-      whileHover={{ scale: 1.2 , boxShadow:true}}
-      whileTap={{ scale: 0.8 }}
+      whileHover={{ scale: 1.2 , boxShadow:true ,rotate:360 ,backgroundColor:"red"}}
+      // whileTap={{ scale: 0.8 }}
+      transition={{ease: "linear"}}
       
       className="h-52 w-52 cursor-pointer bg-green-500 text-white rounded-lg"
     >
@@ -15,13 +16,13 @@ const Card = (props) => {
           setshowbuttons(true);
         }}
         onMouseLeave={() => setshowbuttons(false)}
-        className="card-container flex flex-col items-center p-10  "
+        className="card-container flex flex-col items-center p-5  "
       >
         <div className="card-image">
-          <img className="h-20 w-20 " src={props.img} alt="" />
+          {/* <img className="h-20 w-20 " src={props.img} alt="" /> */}
         </div>
         <div className="card-content">
-          <h2 className="card-title">{props.title}</h2>
+          <h2 className="card-title text-2xl">{props.title}</h2>
           {showbuttons ? (
             <p className="card-text grid grid-cols-2 items-center">
               <motion.a
