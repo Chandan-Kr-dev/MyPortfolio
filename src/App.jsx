@@ -11,7 +11,7 @@ function App() {
   const {scrollXProgress}=useScroll()
 
   return (
-   <main  >
+   <main className='bg-gradient-to-tr from-blue-700 to-orange-700' >
       <Navbar/>
       <div id="Home">
       <Hero/>
