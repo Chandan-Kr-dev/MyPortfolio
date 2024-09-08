@@ -8,8 +8,11 @@ function Contact() {
   const [email, setemail] = useState("");
   const [Message, setMessage] = useState("");
 
+  const [Loader, setLoader] = useState(false)
+
   const handlesubmit = (e) => {
     e.preventDefault();
+    setLoader(false)
     try {
       axios
         .post(`${import.meta.env.VITE_DEV_URL}api/contact`, {
@@ -82,9 +85,10 @@ function Contact() {
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 1 }}
             type="submit"
+            disabled={!(Loader==false)}
             className="bg-blue-500 md:text-2xl  rounded-lg md:px-3 px-1 py-1 text-white font-bold shadow-md shadow-black"
           >
-            Submit
+            {Loader ? <span>Submitting...</span>:<span>Submit</span>}
           </motion.button>
         </form>
       </div>
