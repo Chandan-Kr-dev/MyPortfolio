@@ -25,6 +25,9 @@ function Contact() {
               text: "Your Message is Sent Successfully",
               icon: "success",
             });
+            setName("");
+            setemail("")
+            setMessage("")
           }else{
             Swal.fire({
               title: "Error!",
