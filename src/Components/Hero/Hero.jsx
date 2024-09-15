@@ -20,7 +20,7 @@ function Hero() {
         animate={{y:0 ,opacity:1}}
         transition={{duration:0.5}}
         id="icons"
-        className="fixed top-1/2 left-0 flex flex-col shadow-md shadow-black p-2 bg-violet-950 md:bg-transparent "
+        className="fixed top-1/2 left-0 z-[999] flex flex-col shadow-md shadow-black p-2 bg-violet-950 md:bg-transparent "
       >
         <motion.a
         whileHover={{scale:1.5 ,color:"green"}}
@@ -36,7 +36,7 @@ function Hero() {
         whileTap={{scale:0 }}
           target="_blank"
           className="invert md:text-4xl  m-2"
-          href="https://www.linkedin.com/in/chandan-kumar-30aa0328a?utm_source=share&utm_campaign=share_via&utm_content=profile"
+          href="https://www.linkedin.com/in/chandan-kumar-30aa0328a"
         >
           <FaLinkedin />
         </motion.a>
