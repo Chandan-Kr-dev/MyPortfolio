@@ -55,7 +55,7 @@ function Hero() {
           initial={{opacity:0 ,y:-100}}
           animate={{y:0 ,opacity:1}}
           transition={{duration:0.5}}
-          src="img1.jpg"
+          src="profile.jpg"
           alt="CK"
           className="avatar md:h-80 md:w-80 h-40 w-40 m-auto  bg-cover object-cover rounded-full"
         />

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { FaLink } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 const Card = (props) => {
   const [showbuttons, setshowbuttons] = useState(false);
@@ -24,20 +26,10 @@ const Card = (props) => {
         <div className="card-content">
           <h2 className="card-title text-2xl">{props.title}</h2>
           {showbuttons ? (
-            <p className="card-text grid grid-cols-2 items-center">
-              <motion.a
-              whileHover={{scale: 1.2 , borderColor:"black", backgroundColor: "white" ,color:"black"}}
-                href={props.visit}
-                className="bg-blue-600 border-2 px-2 mx-2 rounded-lg"
-              >
-                VISIT
-              </motion.a>
-              <motion.a
-                whileHover={{scale:1.2 ,borderColor:"red"}}
-              href={props.code} className="border-2 border-white rounded-lg">
-                CODE
-              </motion.a>
-            </p>
+            <div className="flex justify-center items-center gap-10">
+              <a href={props.visit} className="bg-black text-white rounded-full p-1 hover:bg-white hover:text-black"><FaLink/></a>
+              <a href={props.linkTo} className="bg-black text-white rounded-full p-1 hover:bg-white hover:text-black"><FaGithub/></a>
+            </div>
           ) : null}
         </div>
       </div>
