@@ -16,33 +16,48 @@ function Projects() {
   
 
   const ProjectDetails = [
-    {
-      idx:0,
-      img: "../Todoimg.jpg",
-      title: "Login Form",
-      linkTo: "https://github.com/Chandan-Kr-dev/LoginForm",
-      visit: "",
-    },
-    {
-      idx:1,
-      img: "../Todoimg.jpg",
-      title: "Todo App Using React",
-      linkTo: "https://github.com/Chandan-Kr-dev/TodoReact",
-      visit: "https://main--todo-app-ck.netlify.app/",
-    },
+    
+    // {
+    //   idx:1,
+    //   img:"",
+    //   title: "Todo App Using React",
+    //   linkTo: "https://github.com/Chandan-Kr-dev/TodoReact",
+    //   visit: "https://main--todo-app-ck.netlify.app/",
+    // },
     {
       idx:2,
-      img: "",
+      img: "/wizardz.jpg",
       title: "Animated Website WizardZ",
       linkTo: "https://github.com/Chandan-Kr-dev/WizardZanimatedWeb",
       visit: "https://wizard-zanimated-web.vercel.app/",
     },
+    // {
+    //   idx:3,
+    //   img: "",
+    //   title: "Twitter Clone UI",
+    //   linkTo: "https://github.com/Chandan-Kr-dev/TwiiterCloneUI",
+    //   visit: "",
+    // },
     {
-      idx:3,
-      img: "",
-      title: "Twitter Clone UI",
-      linkTo: "https://github.com/Chandan-Kr-dev/TwiiterCloneUI",
-      visit: "",
+      idx:4,
+      img: "/EgramPanchayat.png",
+      title: "E-Gram Panchayat",
+      linkTo: "https://github.com/Chandan-Kr-dev/EgramPanchayat",
+      visit: "https://egram-panchayat.vercel.app/",
+    },
+    {
+      idx:5,
+      img: "/Judicio.jpg",
+      title: "Judicio",
+      linkTo: "https://github.com/Chandan-Kr-dev/judicio",
+      visit: "https://judicio.vercel.app/",
+    },
+    {
+      idx:6,
+      img: "/letstalk.jpg",
+      title: "Let's Talk",
+      linkTo: "https://github.com/Chandan-Kr-dev/Let-sTalk",
+      visit: "lets-talk-three.vercel.app",
     },
   ];
   const gameProjects = [];
