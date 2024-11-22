@@ -6,6 +6,7 @@ import { Link } from "react-scroll";
 import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { FaFileAlt } from "react-icons/fa";
 
 
 function Hero() {
@@ -14,7 +15,9 @@ function Hero() {
 
 
   return (
+
     <div className=" h-96">
+      
       <motion.aside
         initial={{y:10 ,opacity:0}}
         animate={{y:0 ,opacity:1}}
@@ -49,6 +52,17 @@ function Hero() {
         >
           <FaInstagram />
         </motion.a>
+        <motion.a
+        whileHover={{scale:1.5 ,color:"green"}}
+        whileTap={{scale:0 }}
+          target="_blank"
+          className="invert md:text-4xl  m-2"
+          href="https://drive.google.com/file/d/1tHjpXT5KBB3swPLrq0Vvo_BsatlA04r2/view?usp=drive_link"
+        >
+         <FaFileAlt />
+        
+        </motion.a>
+        
       </motion.aside>
       <div className=" w-4/5 mx-auto mt-60 grid grid-cols-1  md:flex justify-center items-center md:gap-28">
         <motion.img
