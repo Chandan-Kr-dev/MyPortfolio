@@ -18,10 +18,10 @@ const Card = (props) => {
       <div class="card__content">
         <p class="card__title">{props.title}</p>
         <p class="card__description gap-5 ">
-          <a className="" href={props.linkTo}>
+          <a className="md:text-xl text-base" href={props.linkTo}>
             Github
           </a>
-          <a href={props.visit}>Visit</a>
+          <a className="md:text-xl text-base" href={props.visit}>Visit</a>
         </p>
       </div>
     </div>

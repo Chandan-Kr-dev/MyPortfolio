@@ -57,7 +57,7 @@ function Hero() {
         whileTap={{scale:0 }}
           target="_blank"
           className="invert md:text-4xl  m-2"
-          href="https://drive.google.com/file/d/1tHjpXT5KBB3swPLrq0Vvo_BsatlA04r2/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1tHjpXT5KBB3swPLrq0Vvo_BsatlA04r2/view?usp=sharing"
         >
          <FaFileAlt />
         

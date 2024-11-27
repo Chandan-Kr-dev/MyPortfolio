@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Card from "../Card";
 import { motion, useScroll, useTransform } from "framer-motion";
+import GameingCard from "../GameingCard";
 
 function Projects() {
   const [Details, setDetails] = useState([]);
@@ -11,12 +12,8 @@ function Projects() {
   });
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
-  
-
-  
 
   const ProjectDetails = [
-    
     // {
     //   idx:1,
     //   img:"",
@@ -25,7 +22,7 @@ function Projects() {
     //   visit: "https://main--todo-app-ck.netlify.app/",
     // },
     {
-      idx:2,
+      idx: 2,
       img: "/wizardz.jpg",
       title: "Animated Website WizardZ",
       linkTo: "https://github.com/Chandan-Kr-dev/WizardZanimatedWeb",
@@ -39,79 +36,82 @@ function Projects() {
     //   visit: "",
     // },
     {
-      idx:4,
+      idx: 4,
       img: "/EgramPanchayat.png",
       title: "E-Gram Panchayat",
       linkTo: "https://github.com/Chandan-Kr-dev/EgramPanchayat",
       visit: "https://egram-panchayat.vercel.app/",
     },
     {
-      idx:5,
+      idx: 5,
       img: "/Judicio.jpg",
       title: "Judicio",
       linkTo: "https://github.com/Chandan-Kr-dev/judicio",
       visit: "https://judicio.vercel.app/",
     },
     {
-      idx:6,
+      idx: 6,
       img: "/letstalk.jpg",
       title: "Let's Talk",
       linkTo: "https://github.com/Chandan-Kr-dev/Let-sTalk",
       visit: "lets-talk-three.vercel.app",
     },
   ];
-  const gameProjects = [];
-  useEffect(() => {
-    setDetails(ProjectDetails);
-  }, []);
+  const gameProjects = [
+    {
+      idx: 1,
+      img: "/endoftheline.png",
+      title: "End of the Line",
+      desktop: "https://chandan-kr.itch.io/end-of-the-line",
+      android: "https://chandan-kr.itch.io/end-of-the-line-android",
+    },
+  ];
+  // useEffect(() => {
+  //   setDetails(ProjectDetails);
+  // }, []);
 
   return (
-    <motion.div ref={ref} 
-    style={{
-      opacity:opacityProgress,
-      scale:scaleProgress  
-    }} className="md:m-32  mx-6  my-8  rounded-lg text-center">
+    <motion.div
+      ref={ref}
+      style={{
+        opacity: opacityProgress,
+        scale: scaleProgress,
+      }}
+      className="md:m-32  mx-6  my-8  rounded-lg text-center"
+    >
       <h1 className="text-white font-bold md:text-5xl text-2xl">Projects</h1>
       <div className="text-center bg-blue-400 mt-10 rounded-lg p-10">
-        <h1 className="text-white md:text-2xl mb-8">Web Devlopment Projects</h1>
+        <h1 className="text-white md:text-2xl font-semibold mb-8 font-kushan tracking-widest">Web Devlopment Projects</h1>
         <div id="card" className="flex flex-wrap md:mx-20 -mx-5 ">
           {ProjectDetails.map((det) => {
             return (
-              <div key={det.idx} className="m-5 ">
-                <Card img={det.img} title={det.title} code={det.linkTo} visit={det.visit} />
+              <div key={det.idx} className="mx-auto my-5  ">
+                <Card
+                  img={det.img}
+                  title={det.title}
+                  linkTo={det.linkTo}
+                  visit={det.visit}
+                />
               </div>
             );
           })}
         </div>
-        {gameProjects.length > 0 ? (
-          <div>
-            <h1 className="text-white text-2xl mb-8">
-              Game Development Projects
-            </h1>
-            <div
-              id="card"
-              className="flex justify-evenly items-center flex-wrap"
-            >
-              {ProjectDetails.map((det) => {
-                return (
-                  <div>
-                    <img className="h-36 w-36 rounded" src={det.img} alt="" />
-                    <h1 className="text-2xl text-gray-600 font-semibold">
-                      {det.title}
-                    </h1>
-                    <a
-                      className="bg-green-500 text-white  px-2 py-1 rounded-lg my-2"
-                      target="_blank"
-                      href={det.linkTo}
-                    >
-                      Code
-                    </a>
-                  </div>
-                );
-              })}
+        <h1 className="text-white md:text-2xl font-semibold mb-8 font-kushan tracking-widest">Game Devlopment Projects</h1>
+        <div id="card" className="flex flex-wrap md:mx-20 -mx-5 ">
+        {gameProjects.map((project) => {
+          return (
+            <div key={project.idx} className="mx-auto ">
+              
+              <GameingCard
+                img={project.img}
+                title={project.title}
+                desktop={project.desktop}
+                android={project.android}
+              />
             </div>
-          </div>
-        ) : null}
+          );
+        })}
+        </div>
       </div>
     </motion.div>
   );
