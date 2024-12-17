@@ -6,12 +6,15 @@ import Skills from './Components/Skills/Skills'
 import Projects from './Components/Projects/Projects'
 import Contact from './Components/Contact/Contact'
 import { useScroll ,motion } from 'framer-motion'
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 function App() {
   const {scrollXProgress}=useScroll()
 
   return (
    <main className='bg-gradient-to-tr from-blue-700 to-orange-700' >
+    <ToastContainer />
       <Navbar/>
       <div id="Home">
       <Hero/>

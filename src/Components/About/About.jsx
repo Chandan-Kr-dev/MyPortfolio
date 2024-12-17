@@ -35,7 +35,7 @@ function About() {
             lets create things together
           </h2>
           <div className=" md:h-80 md:w-1 h-1 w-48 border-gray-600 border-2"></div>
-          <p className="about md:text-lg text-sm text-white md:w-2/4">
+          <p className="about md:text-xl text-sm text-white md:w-2/4">
             Full-stack developer with a passion for breathing life into games
             using Unity. I build beautiful and functional web applications while
             crafting engaging 2D/3D game experiences. My skills bridge the gap
