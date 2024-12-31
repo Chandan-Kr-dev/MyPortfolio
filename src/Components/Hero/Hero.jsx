@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import { motion } from "framer-motion";
 
 
@@ -10,6 +10,48 @@ import { FaFileAlt } from "react-icons/fa";
 
 
 function Hero() {
+
+  const [text, setText] = useState("");
+
+  const phrases = [
+    "Full Stack Web Developer",
+    "Backend Developer",
+    "Game Developer",
+    "Game Designer",
+  ];
+  const typingSpeed = 100;
+  const delayBetweenPhrases = 2000;
+
+  useEffect(() => {
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    const type = () => {
+      const currentPhrase = phrases[phraseIndex];
+
+      if (!isDeleting) {
+        setText(currentPhrase.substring(0, charIndex + 1));
+        charIndex++;
+        if (charIndex === currentPhrase.length) {
+          isDeleting = true;
+          setTimeout(type, delayBetweenPhrases);
+        } else {
+          setTimeout(type, typingSpeed);
+        }
+      } else {
+        setText(currentPhrase.substring(0, charIndex - 1));
+        charIndex--;
+        if (charIndex === 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+        }
+        setTimeout(type, typingSpeed);
+      }
+    };
+
+    type();
+  }, []);
 
  
 
@@ -79,9 +121,9 @@ function Hero() {
             <motion.h1 initial={{opacity:0 ,x:200}} animate={{x:0 ,opacity:1}} className="md:text-6xl text-2xl font-extrabold my-2 font-mono">
               Hey , I'm  <span className="text-yellow-300">Chandan</span><span className="text-green-500">.</span>
             </motion.h1>
-            <motion.p initial={{x:200 ,opacity:0}} animate={{opacity:1,x:0}} transition={{delay:0.3,duration:0.2}} className=" from md:text-2xl font-bold font-sans ">
-              FullStack web Developer <br /> Game Developer
-            </motion.p>
+            <p  className=" md:h-10 from md:text-3xl font-bold font-sans  ">
+             I am a <span className="text-green-500">{text}.</span> 
+            </p>
           </div>
           <Link
           
